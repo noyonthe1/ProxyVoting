@@ -1,0 +1,180 @@
+﻿
+@section Styles{
+    <link href="~/css/custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/lib/switchery/switchery.css" />
+}
+
+
+
+<div class="wrapper wrapper-content animated fadeInUp" id="parentDiv">
+
+    <div class="ibox-content m-b-sm border-bottom">
+
+        <div class="ibox-title no-borders">
+            <h5 class="p-h-sm">Add resolutions to this campaign</h5>
+            <div class="ibox-tools">
+                <button title="Create new cluster" class="btn btn-primary btn-sm" onclick="save()" id="saveAllQuestions"><i class="fa fa-check"></i> <span class="bold">Save All</span></button>
+                <button title="Create new cluster" class="btn btn-primary btn-sm" id="addQuestion"><i class="fa fa-plus"></i> <span class="bold">Add Resolution</span></button>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/switchery/switchery.js"></script>
+    <script type="text/javascript">
+        var question = 1;
+        $(document).ready(function () {
+
+        });
+
+
+        $('#addQuestion').click(function () {
+
+            if (question == 1) {
+                $('#parentDiv').append(
+                    '<div id="question' + question + '">' +
+                        '<div class="ibox-content m-b-sm boxDashedBorder">' +
+                                '<div class="ibox-title h-sm no-borders text-left">' +
+                                    '<div class="row">' +
+                                        '<div class="col-md-6">' +
+                                            '<h4 class="no-margins">Resolution ' + question + '</h4>' +
+                                        '</div>' +
+                                        '<div class="pull-right col-md-2">' +
+                                            '<label class="m-l-sm pull-right">Description <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"></i></label>' +
+                                            '<div class="switch pull-right m-l-md">' +
+
+                                                '<div class="onoffswitch">' +
+
+                                                    '<input type="checkbox" class="onoffswitch-checkbox" onchange="toggleDescription(this)" id=' + question + '>' +
+                                                    '<label class="onoffswitch-label" for=' + question + '>' +
+                                                        '<span class="onoffswitch-inner"></span>' +
+                                                        '<span class="onoffswitch-switch"></span>' +
+                                                    '</label>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="pull-right col-md-3">' +
+                                            '<label class="m-l-sm pull-right">Required</label>' +
+                                            '<div class="switch pull-right">' +
+                                                '<div class="onoffswitch">' +
+                                                    '<input type="checkbox" class="onoffswitch-checkbox" id="required' + question + '">' +
+                                                    '<label class="onoffswitch-label" for="required' + question + '">' +
+                                                        '<span class="onoffswitch-inner"></span>' +
+                                                        '<span class="onoffswitch-switch"></span>' +
+                                                    '</label>' +
+                                               ' </div>' +
+                                            '</div>' +
+                                        '</div>' +
+
+                                    '</div>' +
+                                '</div>' +
+
+                                '<textarea class="form-control m-b-sm" rows="3" id="questionText' + question + '" placeholder="Type resolution here"></textarea>' +
+                                '<div id="q' + 1 + 'descriptionPanel" style="display: none">' +
+                                    '<div class="border-bottom m-b-sm"></div>' +
+                                    '<textarea class="form-control m-b-sm animated fadeIn" id="q' + question + 'descriptionText" rows="3" placeholder="Type description here"></textarea>' +
+                                '</div>' +
+                            '</div>' +
+
+                        '</div>' +
+                    '</div>'
+                    );
+            } else {
+                $('#question' + (question - 1) + '').append(
+                        '<div id="question' + question + '">' +
+                        '<div class="ibox-content m-b-sm boxDashedBorder">' +
+                            '<div class="ibox-title h-sm no-borders text-left">' +
+                                    '<div class="row">' +
+                                        '<div class="col-md-6">' +
+                                            '<h4 class="no-margins">Resolution ' + question + '</h4>' +
+                                        '</div>' +
+                                        '<div class="pull-right col-md-2">' +
+                                            '<label class="m-l-sm pull-right">Description <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"></i></label>' +
+                                            '<div class="switch pull-right m-l-md">' +
+
+                                                '<div class="onoffswitch">' +
+
+                                                    '<input type="checkbox" class="onoffswitch-checkbox" onchange="toggleDescription(this)" id=' + question + '>' +
+                                                    '<label class="onoffswitch-label" for=' + question + '>' +
+                                                        '<span class="onoffswitch-inner"></span>' +
+                                                        '<span class="onoffswitch-switch"></span>' +
+                                                    '</label>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="pull-right col-md-3">' +
+                                            '<label class="m-l-sm pull-right">Required</label>' +
+                                            '<div class="switch pull-right">' +
+                                                '<div class="onoffswitch">' +
+                                                    '<input type="checkbox" class="onoffswitch-checkbox" id="required' + question + '">' +
+                                                    '<label class="onoffswitch-label" for="required' + question + '">' +
+                                                        '<span class="onoffswitch-inner"></span>' +
+                                                        '<span class="onoffswitch-switch"></span>' +
+                                                    '</label>' +
+                                               ' </div>' +
+                                            '</div>' +
+                                        '</div>' +
+
+                                    '</div>' +
+                                '</div>' +
+                                '<textarea class="form-control m-b-sm" rows="3" id="questionText' + question + '" placeholder="Type resolution here"></textarea>' +
+                                '<div id="q' + question + 'descriptionPanel" style="display: none">' +
+                                    '<div class="border-bottom m-b-sm"></div>' +
+                                    '<textarea class="form-control m-b-sm animated fadeIn" id="q' + question + 'descriptionText" rows="3" placeholder="Type description here"></textarea>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>'
+                    );
+            }
+            $('#questionText' + question).focus();
+            question++;
+        });
+
+
+        function toggleDescription(checkBox) {
+            if ($(checkBox).is(':checked')) {
+                $('#q' + checkBox.id + 'descriptionPanel').show();
+                $('#q' + checkBox.id + 'descriptionPanel').focus();
+            } else {
+                $('#q' + checkBox.id + 'descriptionPanel').hide();
+            }
+
+        }
+        function save() {
+            debugger;
+            localStorage.clear();
+            var required = 0;
+            for (var i = 1; i <= question - 1; i++) {
+                var questionId = i;
+                if ($('#required' + questionId + '').is(':checked')) {
+                    required = 1
+                } else {
+                    required = 0
+                }
+                var questionObj = {
+                    'name': "question" + i,
+                    'questionText': $('#questionText' + questionId + '').val(),
+                    'desc': $('#q' + questionId + 'descriptionText').val(),
+                    'isRequired': required
+                };
+
+                localStorage.setItem('question' + i, JSON.stringify(questionObj));
+                localStorage.setItem('totalQuestions', question);
+            }
+        }
+
+
+    </script>
+
+}
+
+
+
+

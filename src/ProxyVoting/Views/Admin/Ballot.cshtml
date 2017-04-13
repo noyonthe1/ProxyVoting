@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "Voting";
+}
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lorem Ipsum is simply </h5>
+                   
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table">
+                        <thead>
+                            <tr class="row">
+                                <th class="col-lg-6">Proposal</th>
+                                <th class="col-md-2">Ballot</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+
+                        </tbody>
+                    </table>
+                    <div class="border-bottom m-b-sm "></div>
+                    <div class="col-md-offset-2">
+                        <button title="Create new cluster" class="btn btn-primary btn-sm" onclick="save()" id="saveAllQuestions"><i class="fa fa-check"></i> <span class="bold">Vote</span></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Styles {
+    <environment names="Development,Staging,Production">
+        <link rel="stylesheet" href="~/lib/dataTables/datatables.min.css" />
+        <link href="~/css/custom.css" rel="stylesheet" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib/dataTables/datatables.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            var numberOfQuestion = JSON.parse(localStorage.getItem('totalQuestions'));
+            for (var i = 1; i <= parseInt(numberOfQuestion) - 1 ; i++) {
+                var questionObject = JSON.parse(localStorage.getItem("question" + i));
+                var questionFull = questionObject.questionText;
+                if(questionObject.desc != ""){
+                    questionFull = questionFull + ' [' + questionObject.desc + ']';
+                }
+                var isRequired = questionObject.isRequired;
+                $('#tableBody').append(
+                        '<tr class="row" id="question' + i + '">' +
+                                '<td class="col-lg-6">' + questionFull + '</td>' +
+                                '<td class="col-md-2>' +
+                                    '<div class="col-md-2">' +
+                                        '<div class="pure-radiobutton">'+
+                                            '<input id="optionsRadios1' + i + '" name="optionsRadios' + i + '"  type="radio" class="radio" checked="checked">'+
+                                            '<label for="optionsRadios1' + i + '">For</label>'+
+                                        '</div>'+
+                                    '</div>' +
+                                    '<div col-md-2 id="radio' + i + '">' +
+                                        '<div class="pure-radiobutton">' +
+                                            '<input id="optionsRadios2' + i + '" name="optionsRadios' + i + '"  type="radio" class="radio" checked="checked">' +
+                                            '<label for="optionsRadios2' + i + '">Against</label>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</td>' +
+                            '</tr>'
+                     );
+                    if (isRequired == 0) {
+                        $('#radio' + i + '').append(
+                            '<div col-md-2>' +
+                                '<div class="pure-radiobutton">' +
+                                    '<input id="optionsRadios3' + i + '" name="optionsRadios' + i + '"  type="radio" class="radio" checked="checked">' +
+                                    '<label for="optionsRadios3' + i + '">Abstain</label>' +
+                                '</div>' +    
+                             '</div>'
+                            );
+                    }
+                }
+        });
+
+      
+    </script>
+}

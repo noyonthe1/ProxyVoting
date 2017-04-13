@@ -1,0 +1,805 @@
+@model ProxyVoting.Controllers.AdminController
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>March 2017 Campaign</h5>
+                    <span class="label label-danger">Live</span>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <ul class="list-group clear-list m-t">
+                                <li class="list-group-item fist-item">
+                                    <span class="pull-right">
+                                        10
+                                    </span>
+                                    <span class="label label-success">1</span> Total Number of Resolutions
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        12 K
+                                    </span>
+                                    <span class="label label-info">2</span> Total Request Sent
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        6.3 K
+                                    </span>
+                                    <span class="label label-primary">3</span> Total Response Count
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        5 k
+                                    </span>
+                                    <span class="label label-default">4</span> Request did not reach
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3" style="height:200px">
+                            <div id="ct-chart50" style="height:200px" class="ct-perfect-fourth"></div>
+                        </div>
+                        <div class="col-lg-3" style="height:200px">
+                            <div id="ct-chart30" style="height:200px" class="ct-perfect-fourth"></div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="feed-activity-list">
+                                <div class="feed-element">
+                                    <div>
+
+                                        <strong>Start Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+                                </div>
+
+                                <div class="feed-element">
+                                    <div>
+                                        <strong>End Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="statistic-box">
+                                <ul class="stat-list m-t-lg">
+                                    <li>
+                                        <span class="label label-info pull-right">Vote Casted</span>
+                                        <h2 class="no-margins">6,346</h2>
+                                        <small>Vote Casted</small>
+                                        <div class="progress progress-mini">
+                                            <div class="progress-bar" style="width: 50%;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>April-May 2017 Campaign</h5>
+                    <div class="ibox-tools">
+                        @*<button class="btn btn-warning " type="button"><i class="fa fa-edit"></i> Edit</button>*@
+                        <button type="button" id="btnCampaignEdit" class="btn btn-outline btn-primary"><i class="fa fa-edit"></i> Edit</button>
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="table-responsive">
+                                <table class="table table-hover issue-tracker">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-1
+                                                </a>
+                                                <small>
+                                                    Receipt of the Company's Reports and Accounts
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-5
+                                                </a>
+                                                <small>
+                                                    Authority to agree the Auditors' remuneration
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-2
+                                                </a>
+                                                <small>
+                                                    Approval of Directors' Remuneration Policy
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-6
+                                                </a>
+                                                <small>
+                                                    Re-appointment of Jalal Bagherli as a Director of the Company
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-3
+                                                </a>
+                                                <small>
+                                                    Approval of Directors' Remuneration Report
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <span class="label label-warning">Removed</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-7
+                                                </a>
+                                                <small>
+                                                    Re-appointment of Christopher Burke as a Director of the Company
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="label label-warning">Removed</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-4
+                                                </a>
+                                                <small>
+                                                    Re-appointment of Deloitte LLP as Auditors of the Company
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <span class="label label-primary">Added</span>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="#">
+                                                    Resolution-8
+                                                </a>
+                                                <small>
+                                                    Re-appointment of Russell Shaw as a Director of the Company
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        @*<tr>
+                                                <td>
+                                                    <span class="label label-primary">Added</span>
+                                                </td>
+                                                <td class="issue-info">
+                                                    <a href="#">
+                                                        Resolution-5
+                                                    </a>
+                                                    <small>
+                                                        This is issue with the coresponding note
+                                                    </small>
+                                                </td>
+                                                <td>
+                                                    Adrian Novak
+                                                </td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-white btn-xs"> Tag</button>
+                                                    <button class="btn btn-white btn-xs"> Mag</button>
+                                                    <button class="btn btn-white btn-xs"> Rag</button>
+                                                </td>
+                                            </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <canvas id="doughnutChart" height="200"></canvas>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="feed-activity-list">
+                                <div class="feed-element">
+                                    <div>
+                                        <strong>Start Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+                                </div>
+
+                                <div class="feed-element">
+                                    <div>
+                                        <strong>End Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+
+                                </div>
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <span class="pull-right"><i class="fa fa-clock-o"></i></span>
+                                        <h5>Time Left To Start</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 style="font-family: 'Digital7Mono'; font-size:40px" id="demo"></h1>
+                                    </div>
+                                    @*<div class="ibox-title">
+                                            <h2 class="pull-right" style="font-family: 'Digital7Mono'; font-size:25px"  id="day"></h2>
+                                            <h5>Days Left</h5>
+                                        </div>
+                                        <div class="ibox-title">
+                                            <h2 class="pull-right" style="font-family: 'Digital7Mono'; font-size:25px"  id="demo"></h2>
+                                            <h5>Time Left</h5>
+                                        </div>*@
+                                    @*<div class="ibox-content">
+                                            <h1 class="no-margins" id="demo"></h1>
+                                            <div class="stat-percent font-bold text-success"><i class="fa fa-clock-o"></i></div>
+                                            <small><i class="fa fa-clock-o"></i> Time Left</small>
+                                        </div>*@
+                                </div>
+                                @*<div class="ibox float-e-margins">
+                                        <div class="ibox-title">
+                                            <span class="pull-right"><i class="fa fa-clock-o"></i></span>
+                                            <h5>Time Left To Start</h5>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <h1 style="font-family: 'Digital7Mono'; font-size:40px" id="demo"></h1>
+                                        </div>
+
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Beta Solution Ltd.</h5>
+                    <span class="label label-info">Completed</span>
+                    <div class="ibox-tools">
+                        @*<button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-edit"></i></button>*@
+                        @*<button class="btn btn-primary " type="button"><i class="fa fa-paste"></i> View</button>*@
+                        <button type="button" id="btnCampaignView" class="btn btn-outline btn-primary"><i class="fa fa-paste"></i>View</button>
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <ul class="list-group clear-list m-t">
+                                <li class="list-group-item fist-item">
+                                    <span class="pull-right">
+                                        11
+                                    </span>
+                                    <span class="label label-success">1</span> Total Number of Resolutions
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        13 K
+                                    </span>
+                                    <span class="label label-info">2</span> Total Request Sent
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        6.4 K
+                                    </span>
+                                    <span class="label label-primary">3</span> Total Response Count
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        5 K
+                                    </span>
+                                    <span class="label label-default">4</span> Total Number of
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3" style="height:200px">
+                            <div id="ct-chart5" style="height:200px" class="ct-perfect-fourth"></div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div id="ct-chart3" style="height:200px" class="ct-perfect-fourth"></div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="feed-activity-list">
+                                <div class="feed-element">
+                                    <div>
+
+                                        <strong>Start Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+                                </div>
+
+                                <div class="feed-element">
+                                    <div>
+                                        <strong>End Date</strong>
+                                        <div>Today 5:60 pm - 12.06.2014</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="statistic-box">
+                                <ul class="stat-list m-t-lg">
+                                    <li>
+                                        <span class="label label-info pull-right">Vote Casted</span>
+                                        <h2 class="no-margins">2,446</h2>
+                                        <small>Total Request Sent</small>
+                                        <div class="progress progress-mini">
+                                            <div class="progress-bar" style="width: 70%;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+@section Styles {
+    <environment names="Development,Staging,Production">
+        <link href="~/css/font/stylesheet.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/lib_bower/ladda/dist/ladda-themeless.min.css" />
+        <link rel="stylesheet" href="~/lib/chartist/chartist.css" />
+    </environment>
+
+    <style>
+        #days {
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 30px;
+        }
+    </style>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <environment names="Development">
+        <script src="~/lib/flot/jquery.flot.js"></script>
+        <script src="~/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="~/lib/flot/jquery.flot.resize.js"></script>
+        <script src="~/lib/flot/jquery.flot.pie.js"></script>
+        <script src="~/lib/flot/jquery.flot.time.js"></script>
+        <script src="~/lib/flot/jquery.flot.spline.js"></script>
+        <script src="~/lib/sparkline/jquery.sparkline.min.js"></script>
+        <script src="~/lib/chartJs/Chart.min.js"></script>
+        <script src="~/lib_bower/peity/jquery.peity.js"></script>
+        <script src="~/lib_bower/chartist/dist/chartist.js"></script>
+
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib_bower/ladda/dist/spin.min.js"></script>
+        <script src="~/lib_bower/ladda/dist/ladda.min.js"></script>
+        <script src="~/lib_bower/ladda/dist/ladda.jquery.min.js"></script>
+        <script src="~/lib_bower/chartist/dist/chartist.min.js"></script>
+
+        <script src="~/lib/flot/jquery.flot.js"></script>
+        <script src="~/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="~/lib/flot/jquery.flot.resize.js"></script>
+        <script src="~/lib/flot/jquery.flot.pie.js"></script>
+        <script src="~/lib/flot/jquery.flot.time.js"></script>
+        <script src="~/lib/flot/jquery.flot.spline.js"></script>
+        <script src="~/lib/sparkline/jquery.sparkline.min.js"></script>
+        <script src="~/lib/chartJs/Chart.min.js"></script>
+        <script src="~/lib_bower/peity/jquery.peity.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Set the date we're counting down to
+            var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                //document.getElementById("days").innerHTML = ;
+                var datetime = days + " Days " + hours + ":" + minutes + ":" + seconds + "";
+                datetime = datetime.replace("Days", "<span id='days'> Days   </Span>");
+
+                document.getElementById("demo").innerHTML = datetime;
+
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+
+            var doughnutData = {
+                labels: ["May not respond", "May respond", ],
+                datasets: [{
+                    data: [100, 50],
+                    backgroundColor: ["#b5b8cf", "#dedede"]
+                }]
+            };
+
+
+            var doughnutOptions = {
+                responsive: true
+            };
+
+
+            var ctx4 = document.getElementById("doughnutChart").getContext("2d");
+            new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            $(".bar_dashboard").peity("bar", {
+                fill: ["#1ab394", "#d7d7d7"],
+                width: 100
+            })
+
+            $("#sparkline8").sparkline([5, 6, 7, 2, 0, 4, 2, 4, 5, 7, 2, 4, 12, 14, 4, 2, 14, 12, 7], {
+                type: 'bar',
+                barWidth: 8,
+                height: '150px',
+                barColor: '#1ab394',
+                negBarColor: '#c6c6c6'
+            });
+
+            var updatingChart = $(".updating-chart").peity("line", { fill: '#1ab394', stroke: '#169c81', width: 64 })
+
+            setInterval(function () {
+                var random = Math.round(Math.random() * 10)
+                var values = updatingChart.text().split(",")
+                values.shift()
+                values.push(random)
+
+                updatingChart
+                    .text(values.join(","))
+                    .change()
+            }, 1000);
+
+            var data1 = [
+                [0, 4], [1, 8], [2, 5], [3, 10], [4, 4], [5, 16], [6, 5], [7, 11], [8, 6], [9, 11], [10, 30], [11, 10], [12, 13], [13, 4], [14, 3], [15, 3], [16, 6]
+            ];
+            var data2 = [
+                [0, 1], [1, 0], [2, 2], [3, 0], [4, 1], [5, 3], [6, 1], [7, 5], [8, 2], [9, 3], [10, 2], [11, 1], [12, 0], [13, 2], [14, 8], [15, 0], [16, 0]
+            ];
+            $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
+                data1, data2
+            ],
+                    {
+                        series: {
+                            lines: {
+                                show: false,
+                                fill: true
+                            },
+                            splines: {
+                                show: true,
+                                tension: 0.4,
+                                lineWidth: 1,
+                                fill: 0.4
+                            },
+                            points: {
+                                radius: 0,
+                                show: true
+                            },
+                            shadowSize: 2
+                        },
+                        grid: {
+                            hoverable: true,
+                            clickable: true,
+                            tickColor: "#d5d5d5",
+                            borderWidth: 1,
+                            color: '#d5d5d5'
+                        },
+                        colors: ["#1ab394", "#464f88"],
+                        xaxis: {
+                        },
+                        yaxis: {
+                            ticks: 4
+                        },
+                        tooltip: false
+                    }
+            );
+
+            //var doughnutData = {
+            //    labels: ["App", "Software", "Laptop"],
+            //    datasets: [{
+            //        data: [300, 50, 100],
+            //        backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+            //    }]
+            //};
+
+
+            //var doughnutOptions = {
+            //    responsive: false,
+            //    legend: {
+            //        display: false
+            //    }
+            //};
+
+
+            //var ctx4 = document.getElementById("doughnutChart").getContext("2d");
+            //new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            //var doughnutData = {
+            //    labels: ["App", "Software", "Laptop"],
+            //    datasets: [{
+            //        data: [70, 27, 85],
+            //        backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+            //    }]
+            //};
+
+
+            //var doughnutOptions = {
+            //    responsive: false,
+            //    legend: {
+            //        display: false
+            //    }
+            //};
+
+
+            //var ctx4 = document.getElementById("doughnutChart2").getContext("2d");
+            //new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            //var doughnutData = {
+            //    labels: ["App", "Software", "Laptop"],
+            //    datasets: [{
+            //        data: [300, 50, 100],
+            //        backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+            //    }]
+            //};
+
+
+            //var doughnutOptions = {
+            //    responsive: false,
+            //    legend: {
+            //        display: false
+            //    }
+            //};
+
+
+            //var ctx4 = document.getElementById("doughnutChart3").getContext("2d");
+            //new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            //var doughnutData = {
+            //    labels: ["App", "Software", "Laptop"],
+            //    datasets: [{
+            //        data: [70, 27, 85],
+            //        backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
+            //    }]
+            //};
+
+
+            //var doughnutOptions = {
+            //    responsive: false,
+            //    legend: {
+            //        display: false
+            //    }
+            //};
+
+
+            //var ctx4 = document.getElementById("doughnutChart4").getContext("2d");
+            //new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
+
+            var times = function (n) {
+                return Array.apply(null, new Array(n));
+            };
+
+            var data = times(26).map(Math.random).reduce(function (data, rnd, index) {
+                data.labels.push(index + 1);
+                data.series.forEach(function (series) {
+                    series.push(Math.random() * 100)
+                });
+
+                return data;
+            }, {
+                labels: [],
+                series: times(4).map(function () { return new Array() })
+            });
+
+            var options = {
+                showLine: false,
+                axisX: {
+                    labelInterpolationFnc: function (value, index) {
+                        return index % 13 === 0 ? 'W' + value : null;
+                    }
+                }
+            };
+            // Stocked bar chart
+
+            new Chartist.Bar('#ct-chart3', {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                series: [
+                    [800000, 1200000, 1400000, 1300000, 1000000],
+                    [200000, 400000, 500000, 300000, 330000],
+                    [100000, 200000, 400000, 600000, 500000]
+                ]
+            }, {
+                stackBars: true,
+                axisY: {
+                    labelInterpolationFnc: function (value) {
+                        return (value / 1000) + 'k';
+                    }
+                }
+            }).on('draw', function (data) {
+                if (data.type === 'bar') {
+                    data.element.attr({
+                        style: 'stroke-width: 30px'
+                    });
+                }
+            });
+            // Stocked bar chart
+
+            new Chartist.Bar('#ct-chart30', {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                series: [
+                    [800000, 1200000, 1400000, 1300000, 1000000],
+                    [200000, 400000, 500000, 300000, 330000],
+                    [100000, 200000, 400000, 600000, 500000]
+                ]
+            }, {
+                stackBars: true,
+                axisY: {
+                    labelInterpolationFnc: function (value) {
+                        return (value / 1000) + 'k';
+                    }
+                }
+            }).on('draw', function (data) {
+                if (data.type === 'bar') {
+                    data.element.attr({
+                        style: 'stroke-width: 30px'
+                    });
+                }
+            });
+            // Simple pie chart
+
+            var data = {
+                series: [5, 3, 4]
+            };
+
+            var sum = function (a, b) { return a + b };
+
+            new Chartist.Pie('#ct-chart5', data, {
+                labelInterpolationFnc: function (value) {
+                    return Math.round(value / data.series.reduce(sum) * 100) + '%';
+                }
+            });
+
+
+            // Simple pie chart
+
+            var data = {
+                series: [5, 3, 4]
+            };
+
+            var sum = function (a, b) { return a + b };
+
+            new Chartist.Pie('#ct-chart50', data, {
+                labelInterpolationFnc: function (value) {
+                    return Math.round(value / data.series.reduce(sum) * 100) + '%';
+                }
+            });
+
+
+            $("#btnCampaignEdit").click(function () {
+
+                ////TODO
+                var campaignHeaderMessage = "DIALOG SEMICONDUCTOR PLC AGM ON 28 APRIL 2016",
+                campaignName = "Annual General Meeting of Dialog Semiconductor Plc on 28 April 2016",
+                campaignEmailTemplateId = "2",
+                campaignStartDate = "04/28/2016",
+                campaignRevStartDate = "04/28/2016",
+                campaignStartTime = "10.00",
+                campaignEndTime = "20.00",
+                campaignVotingEndDate = "04/28/2016",
+                campaignWelcomeMessage = "Welcome",
+                campaignFooterMessage = "Footer"
+                ;
+                var campaignData = {
+                    'campaignHeaderMessage': campaignHeaderMessage != undefined ? campaignHeaderMessage : "",
+                    'campaignName': campaignName != undefined ? campaignName : "",
+                    'campaignEmailTemplateId': campaignEmailTemplateId != undefined ? campaignEmailTemplateId : "",
+                    'campaignStartDate': campaignStartDate != undefined ? campaignStartDate : "",
+                    'campaignVotingEndDate': campaignVotingEndDate != undefined ? campaignVotingEndDate : "",
+                    'campaignRevStartDate': campaignRevStartDate != undefined ? campaignRevStartDate : "",
+                    'campaignStartTime': campaignStartTime != undefined ? campaignStartTime : "",
+                    'campaignEndTime': campaignEndTime != undefined ? campaignEndTime : "",
+                    'campaignWelcomeMessage': campaignWelcomeMessage != undefined ? campaignWelcomeMessage : "",
+                    'campaignFooterMessage': campaignFooterMessage != undefined ? campaignFooterMessage : ""
+                };
+
+                // Put the object into storage
+                localStorage.setItem('campaignData', JSON.stringify(campaignData));
+                
+                location.href = '@Url.Action("Campaign", "Admin")';
+            });
+
+
+            $("#btnCampaignView").click(function () {
+
+                ////TODO
+                var campaignHeaderMessage = "DIALOG SEMICONDUCTOR PLC AGM ON 28 APRIL 2016",
+                campaignName = "Annual General Meeting of Dialog Semiconductor Plc on 28 April 2016",
+                campaignEmailTemplateId = "2",
+                campaignStartDate = "04/28/2016",
+                campaignRevStartDate = "04/28/2016",
+                campaignStartTime = "10.00",
+                campaignEndTime = "20.00",
+                campaignVotingEndDate = "04/28/2016",
+                campaignWelcomeMessage = "Welcome",
+                campaignFooterMessage = "Footer"
+                ;
+                var campaignData = {
+                    'campaignHeaderMessage': campaignHeaderMessage != undefined ? campaignHeaderMessage : "",
+                    'campaignName': campaignName != undefined ? campaignName : "",
+                    'campaignEmailTemplateId': campaignEmailTemplateId != undefined ? campaignEmailTemplateId : "",
+                    'campaignStartDate': campaignStartDate != undefined ? campaignStartDate : "",
+                    'campaignVotingEndDate': campaignVotingEndDate != undefined ? campaignVotingEndDate : "",
+                    'campaignRevStartDate': campaignRevStartDate != undefined ? campaignRevStartDate : "",
+                    'campaignStartTime': campaignStartTime != undefined ? campaignStartTime : "",
+                    'campaignEndTime': campaignEndTime != undefined ? campaignEndTime : "",
+                    'campaignWelcomeMessage': campaignWelcomeMessage != undefined ? campaignWelcomeMessage : "",
+                    'campaignFooterMessage': campaignFooterMessage != undefined ? campaignFooterMessage : ""
+                };
+
+                // Put the object into storage
+                localStorage.setItem('campaignData', JSON.stringify(campaignData));
+
+                location.href = '@Url.Action("Campaign", "Admin")';
+            });
+
+        });
+    </script>
+}

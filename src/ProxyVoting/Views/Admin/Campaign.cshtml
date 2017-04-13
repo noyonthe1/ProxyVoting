@@ -1,0 +1,291 @@
+﻿
+@section Styles {
+    <environment names="Development,Staging,Production">
+        <link href="~/css/custom.css" rel="stylesheet" />
+    </environment>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/clockpicker/clockpicker.css" />
+        <link rel="stylesheet" href="~/lib_bower/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/clockpicker/clockpicker.css" />
+        <link rel="stylesheet" href="~/lib_bower/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" />
+    </environment>
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="btn btn-primary pull-right m-t-n-xs m-b" id="btnCampaignNextPageTop" type="submit"><strong>Continue to Resolution page</strong></button>
+            <div class="ibox boxDashedBorder">
+                <div class="ibox-title campaign-title-zero-top-border">
+                    <h5>Header Message</h5>
+                </div>
+                <div class="campaign-message">
+                    <form class="form-horizontal">
+                        <div class="form-group campaign-message-zero-bottom-mergin">
+                            <div class="col-lg-12">
+                                <textarea id="textareaHeaderMessage" placeholder="Please put any message to display in header section of the voting page" class="form-control campaign-title-textarea-resize-off" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Campaign Details</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group required" id="divCampaignName">
+                                <label class="col-sm-4 control-label">Campaign Name</label>
+                                <div class="col-sm-8 input-group ">
+                                    <input type="text" id="inputCampaignName" placeholder="Campaign Name" required="required" class="form-control m-b">
+                                </div>
+                            </div>
+
+                            <div class="form-group required" id="divCampaignStartDate">
+                                <label class="col-sm-4 control-label">Campaign Start Date</label>
+                                <div class="col-sm-8 input-group date">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                    <input type="text" id="inputCampaignStartDate" required="required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group required" id="divVotingEndDate">
+                                <label class="col-sm-4 control-label">Voting End Date</label>
+                                <div class="col-sm-8 input-group date">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                    <input type="text" id="inputCampaignVotingEndDate" required="required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Welcome Message</label>
+                                <div class="col-sm-8  input-group">
+                                    <textarea id="textAreaWelcomeMessage" placeholder="Please put any message to display in welcome section of the welcome page" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group required">
+                                <label class="col-sm-4 control-label">Campaign Email Template</label>
+                                <div class="col-sm-8 input-group">
+                                    <select class="form-control m-b" id="cmbCampaignEmailTemplate" required="required" name="emailTemplate">
+                                        @*<option value="0">- Select -</option>*@
+                                        <option value="1">Email Template 1</option>
+                                        <option value="2">Email Template 2</option>
+                                        <option value="3">Email Template 3</option>
+                                        <option value="4">Email Template 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group required">
+                                <label class="col-sm-4 control-label">Campaign Start Time</label>
+                                <div class="col-sm-8 input-group clockpicker" data-autoclose="true">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                    <input type="text" id="inputCampaignStartTime" required="required" class="form-control" value="" data-default="20:48">
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label class="col-sm-4 control-label">Voting End Time</label>
+                                <div class="col-sm-8 input-group clockpicker" data-autoclose="true">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                    <input type="text" id="inputCampaignVotingEndTime" required="required" class="form-control" value="" data-default="20:48">
+                                </div>
+                            </div>
+                            <div class="form-group required" id="divRevStartDate">
+                                <label class="col-sm-4 control-label">Rev Start Date</label>
+                                <div class="col-sm-8 input-group date">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                    <input type="text" id="inputRevStartDate" required="required" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox boxDashedBorder">
+                <div class="ibox-title campaign-title-zero-top-border">
+                    <h5>Footer Message</h5>
+                </div>
+                <div class="campaign-message">
+                    <form class="form-horizontal">
+                        <div class="form-group campaign-message-zero-bottom-mergin">
+                            <div class="col-lg-12">
+                                <textarea id="textareaFooterMessage" placeholder="Please put any message to display in footer section of the voting page" class="form-control campaign-title-textarea-resize-off" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button class="btn btn-primary pull-right m-t-n-xs" id="btnCampaignNextPageBottom" type="submit"><strong>Continue to Resolution page</strong></button>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <environment names="Development">
+        <script src="~/lib/clockpicker/clockpicker.js"></script><
+        <script src="~/lib_bower/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/clockpicker/clockpicker.js"></script>
+        <script src="~/lib_bower/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //localStorage.setItem('campaignData', '');
+            if (localStorage.getItem("campaignData") != undefined) {
+                // Retrieve the object from storage
+                var retrievedCampaignData = localStorage.getItem('campaignData');
+                //console.log('retrievedCampaignData: ', JSON.parse(retrievedCampaignData));
+
+                if (retrievedCampaignData != undefined) {
+                    var retrievedCampaignJsonData = JSON.parse(retrievedCampaignData);
+                    $('#textareaHeaderMessage').val(retrievedCampaignJsonData.campaignHeaderMessage != undefined ? retrievedCampaignJsonData.campaignHeaderMessage : '');
+                    $('#inputCampaignName').val(retrievedCampaignJsonData.campaignName != undefined ? retrievedCampaignJsonData.campaignName : '');
+                    $('#cmbCampaignEmailTemplate').val(retrievedCampaignJsonData.campaignEmailTemplateId != undefined ? retrievedCampaignJsonData.campaignEmailTemplateId : '');
+                    $('#inputCampaignStartDate').val(retrievedCampaignJsonData.campaignStartDate != undefined ? retrievedCampaignJsonData.campaignStartDate : '');
+                    $('#inputCampaignVotingEndDate').val(retrievedCampaignJsonData.campaignVotingEndDate != undefined ? retrievedCampaignJsonData.campaignVotingEndDate : '');
+                    $('#inputRevStartDate').val(retrievedCampaignJsonData.campaignRevStartDate != undefined ? retrievedCampaignJsonData.campaignRevStartDate : '');
+                    $('#inputCampaignStartTime').val(retrievedCampaignJsonData.campaignStartTime != undefined ? retrievedCampaignJsonData.campaignStartTime : '');
+                    $('#inputCampaignVotingEndTime').val(retrievedCampaignJsonData.campaignEndTime != undefined ? retrievedCampaignJsonData.campaignEndTime : '');
+                    $('#textAreaWelcomeMessage').val(retrievedCampaignJsonData.campaignWelcomeMessage != undefined ? retrievedCampaignJsonData.campaignWelcomeMessage : '');
+                    $('#textareaFooterMessage').val(retrievedCampaignJsonData.campaignFooterMessage != undefined ? retrievedCampaignJsonData.campaignFooterMessage : '');
+                }
+            }
+
+
+            $('#divCampaignStartDate .input-group.date').datepicker({
+                todayBtn: "linked",
+                format: 'mm/dd/yyyy',
+                //startDate: '-0d',
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                daysOfWeekHighlighted: '06'
+            });
+        });
+
+        $('#divVotingEndDate .input-group.date').datepicker({
+            todayBtn: "linked",
+            format: 'mm/dd/yyyy',
+            //startDate: '-0d',
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            daysOfWeekHighlighted: '0,6'
+        });
+
+        $('#divRevStartDate .input-group.date').datepicker({
+            todayBtn: "linked",
+            format: 'mm/dd/yyyy',
+            //startDate: '-0d',
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            daysOfWeekHighlighted: [0, 6]
+        });
+
+        $('.clockpicker').clockpicker({
+            placement: 'bottom',
+            align: 'left',
+            donetext: 'Done',
+            autoclose: true,
+            'default': 'now'
+        });
+
+        $("#btnCampaignNextPageTop").click(function () {
+            storeCampaignData();
+        });
+
+        $("#btnCampaignNextPageBottom").click(function () {
+            storeCampaignData();
+        });
+
+        function storeCampaignData() {
+            //alert('storeCampaignData');
+
+            var campaignHeaderMessage = "",
+            campaignName = "",
+            campaignEmailTemplateId = "",
+            campaignStartDate = "",
+            campaignRevStartDate = "",
+            campaignStartTime = "",
+            campaignEndTime = "",
+            campaignVotingEndDate = "",
+            campaignWelcomeMessage = "",
+            campaignFooterMessage = ""
+            ;
+
+            try {
+                campaignHeaderMessage = $('#textareaHeaderMessage').val();
+                campaignName = $('#inputCampaignName').val();
+                campaignEmailTemplateId = $('#cmbCampaignEmailTemplate').find(":selected").val();
+                campaignStartDate = $('#inputCampaignStartDate').val();
+                campaignVotingEndDate = $('#inputCampaignVotingEndDate').val();
+                campaignRevStartDate = $('#inputRevStartDate').val();
+                campaignStartTime = $('#inputCampaignStartTime').val();
+                campaignEndTime = $('#inputCampaignVotingEndTime').val();
+                campaignWelcomeMessage = $('#textAreaWelcomeMessage').val();
+                campaignFooterMessage = $('#textareaFooterMessage').val();
+            } catch (e) {
+                console.log(e);
+            }
+            var campaignData = {
+                'campaignHeaderMessage': campaignHeaderMessage != undefined ? campaignHeaderMessage : "",
+                'campaignName': campaignName != undefined ? campaignName : "",
+                'campaignEmailTemplateId': campaignEmailTemplateId != undefined ? campaignEmailTemplateId : "",
+                'campaignStartDate': campaignStartDate != undefined ? campaignStartDate : "",
+                'campaignVotingEndDate': campaignVotingEndDate != undefined ? campaignVotingEndDate : "",
+                'campaignRevStartDate': campaignRevStartDate != undefined ? campaignRevStartDate : "",
+                'campaignStartTime': campaignStartTime != undefined ? campaignStartTime : "",
+                'campaignEndTime': campaignEndTime != undefined ? campaignEndTime : "",
+                'campaignWelcomeMessage': campaignWelcomeMessage != undefined ? campaignWelcomeMessage : "",
+                'campaignFooterMessage': campaignFooterMessage != undefined ? campaignFooterMessage : ""
+            };
+
+            // Put the object into storage
+            localStorage.setItem('campaignData', JSON.stringify(campaignData));
+
+            // Retrieve the object from storage
+            //var retrievedCampaignData = localStorage.getItem('campaignData');
+
+            //console.log('retrievedCampaignData: ', JSON.parse(retrievedCampaignData));
+
+            location.href = '@Url.Action("AddQuestions", "Admin")';
+        }
+
+    </script>
+
+}

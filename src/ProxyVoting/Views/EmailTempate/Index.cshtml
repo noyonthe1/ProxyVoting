@@ -1,0 +1,379 @@
+﻿@section Styles{
+<link href="/css/email.css" media="all" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/summernote/summernote.css" />
+<link rel="stylesheet" href="/lib/summernote/summernote-bs3.css" />
+
+}
+<div class="wrapper wrapper-content">
+
+    
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content mailbox-content">
+                    <div class="file-manager">
+                        <a class="btn btn-block btn-primary compose-mail" href="#">Tag Helper</a>
+                        <div class="space-25"></div>
+                        <ul class="category-list" style="padding: 0">
+                            <li><a href="#"> <i class="fa fa-circle text-navy"></i> <span class="label label-warning">UserName</span> &nbsp;&nbsp; Name of The StockHolder </a></li>
+                            <li><a href="#"> <i class="fa fa-circle text-danger"></i> <span class="label label-warning">MeetingDate</span>&nbsp;&nbsp; Meeting Date </a></li>
+                            <li><a href="#"> <i class="fa fa-circle text-primary"></i> <span class="label label-warning">SiteURL </span>&nbsp;&nbsp; Redirect Site Url </a></li>
+                            <li><a href="#"> <i class="fa fa-circle text-info"></i> <span class="label label-warning">UserId </span> &nbsp;&nbsp; UserId for internal use </a></li>
+                            <li><a href="#"> <i class="fa fa-circle" style="color:darkseagreen"></i> <span class="label label-warning">CompanyName </span> &nbsp;&nbsp; Company Name</a></li>
+                            <li><a href="#"> <i class="fa fa-circle text-error"></i> <span class="label label-warning">VoteStartDate </span>&nbsp;&nbsp; Voting Start Date</a></li>
+                            <li><a href="#"> <i class="fa fa-circle text-danger"></i> <span class="label label-warning">VoteEndDate </span> &nbsp;&nbsp; Voting End Date</a></li>
+                            <li><a href="#"> <i class="fa fa-circle" style="color:lightcoral"></i> <span class="label label-warning">SendDate </span> &nbsp;&nbsp; Mail Send Date</a></li>
+                            <li><a href="#"> <i class="fa fa-circle" style="color:bisque"></i> <span class="label label-warning">ControlNumber </span> &nbsp;&nbsp; Control Number of Shareholder</a></li>
+                            <li><a href="#"> <i class="fa fa-circle" style="color:darkorchid"></i> <span class="label label-warning">CampaignName </span> &nbsp;&nbsp; Voting Campaign Name</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a data-toggle="modal" class="btn btn-info" href="#modal-form" onclick="ShowPopUp(0)">Add New Template</a>
+                </div>
+                <div id="modal-form" class="modal fade" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title">Email Template</h4>
+                                <small class="font-bold">Customize your own email template</small>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div>
+                                        <div class="mail-box">
+
+                                            <div class="mail-text h-200">
+
+                                                <div class="summernote" id="editTemplate">
+                                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="mail-body text-right tooltip-demo">
+                                                <a href="#" class="btn btn-sm btn-primary" data-dismiss="modal" data-placement="top" title="Send"><i class="fa fa-reply"></i> Save</a>
+                                                <a href="#" class="btn btn-white btn-sm" data-dismiss="modal" data-placement="top" title="Discard email"><i class="fa fa-times"></i> Discard</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 animated fadeInRight">
+            <div class="col-lg-6 gray-bg">
+                <div class="mail-box">
+                    <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="content-wrap">
+                                <table class="main" cellpadding="0" cellspacing="0" id="template1">
+
+                                    <tr>
+                                        <td class="alert alert-good" style="height:100px">
+                                            <h3>AST Proxy Voting</h3>
+                                            <small class="m-b block">Your vote is important for us</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            <h3>Dear [[UserName]]</h3>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            A Special Meeting of Shareholder for <b>[[CampaignName]]</b> takes place on <b>[[MeetingDate]]</b>.Shareholder as of <b>[[SendDate]]</b> are eligible to cast a proxy vote.
+</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="content-block">
+                                            You can cast your vote online. Your Control Number, which mabe be required to vote, is <b>[[ControlNumber]]</b>
+</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            The voting will take place from <b>[[VoteStartDate]]</b> to <b>[[VoteEndDate]]</b> and requires your participation. To participate please click the link below.
+</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block aligncenter">
+                                            <a href="http://[[SiteURL]]?state=confirmation&emailId=[[UserId]]&clientName=[[ClientName]]" target="_blank" class="btn-primary">Start Voting</a>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td class="content-block">
+                                            Regards<br />
+                                           <b>[[CompanyName]]</b> 
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="height:10px">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        <a data-toggle="modal" class="btn btn-info" href="#modal-form" onclick="ShowPopUp(1)">Modify Template</a>
+                                    </div>
+                                </div>
+                        </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+               
+
+            <div class="col-lg-6 gray-bg">
+                <div class="mail-box">
+                    <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="content-wrap">
+                                <table class="main" cellpadding="0" cellspacing="0" id="template1">
+
+                                    <tr>
+                                        <td class="alert alert-good" style="height:100px">
+                                            <h3>AST Proxy Voting</h3>
+                                            <small class="m-b block">Confirmation Email</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            <h3>Welcome [[UserName]]</h3>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            Welcome to  AST proxy voting system! Thanks so much for joining us. You’re on your way to super-productivity and beyond!
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="content-block">
+                                            This is a machine generated email that sends a verification link to the email address. If you don't verify your address, you may not be able to vote in our proxy voting system.
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="content-block aligncenter">
+                                            <a href="http://[[SiteURL]]?state=confirmation&emailId=[[UserId]]&clientName=[[ClientName]]" target="_blank" class="btn-primary">Vote Now</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            Regards<br />
+                                            <b>[[ClientName]]</b>
+                                            <br/>
+                                            <br />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="height:10px">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        
+                                        <a data-toggle="modal" class="btn btn-info" href="#modal-form" onclick="ShowPopUp(1)">Modify Template</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6 gray-bg">
+                <div class="mail-box">
+                    <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="content-wrap">
+                                <table class="main" width="100%" cellpadding="0" cellspacing="0" id="template3">
+                                    <tr>
+                                        <td class="alert alert-good">
+                                            <h3>AST Proxy Voting</h3>
+                                            <small class="m-b block">Voting Request</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-wrap">
+                                            <table width="100%" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="content-block">
+                                                        You have <strong>1 free report</strong> remaining.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                        <a href="http://www.[[SiteURL]]?state=voting&emailId=[[UserId]]&clientName=[[ClientName]]" target="_blank" class="btn-primary">Start Voting</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                        Thanks for choosing Company Inc.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="height:10px">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        <a data-toggle="modal" class="btn btn-info" href="#modal-form" onclick="ShowPopUp(3)">Modify Template</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 gray-bg">
+                <div class="mail-box">
+                    <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="content-wrap">
+                                <table class="main" width="100%" cellpadding="0" cellspacing="0" id="template4">
+                                    <tr>
+                                        <td class="alert alert-good">
+                                            <h3>AST Proxy Voting</h3>
+                                            <small class="m-b block">Voting Result</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-wrap">
+                                            <table width="100%" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="content-block">
+                                                        You have <strong>1 free report</strong> remaining.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                       
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="content-block">
+                                                        Thanks for choosing Company Inc.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="height:10px">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        <a data-toggle="modal" class="btn btn-info" href="#modal-form" onclick="ShowPopUp(4)">Modify Template</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+
+            </div>
+        
+    </div>
+
+    @section scripts{
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib_bower/metisMenu/dist/metisMenu.js"></script>
+    <script src="/lib_bower/slimScroll/jquery.slimscroll.js"></script>
+    <script src="/lib_bower/pace/pace.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- Only for demo purpose -->
+    <script src="/js/skin.config.js"></script>
+
+
+
+
+
+    <script src="/lib/summernote/summernote.min.js"></script>
+
+
+
+
+        <script>
+            function ShowPopUp(index) {
+                if (index == 0) {
+                    var newHtml = "";
+                    newHtml += '<table>';
+                    newHtml +='<tr>'
+                    newHtml +='                   <td class="alert alert-good" style="height:100px">';
+                    newHtml +='                       <h3>AST Proxy Voting</h3>';
+                    newHtml +='                       <small class="m-b block">Mail header</small>';
+                    newHtml +='                   </td>';
+                    newHtml +='               </tr>';
+                    newHtml +='               <tr>';
+                    newHtml +='                   <td class="content-block">';
+                    newHtml +='                       <h3>Welcome [[UserName]]</h3>';
+                    
+                    newHtml +='                   </td>';
+                    newHtml +='               </tr>';
+                    newHtml +='               <tr>';
+                    newHtml +='                   <td class="content-block" style="width="100%">';
+                    newHtml +='                        Customize your own message here and save it as a new template.Select the button below and click link from top. Put your redirect url in link section.';
+                    newHtml +='                   </td>';
+                    newHtml +='               </tr>';
+                   
+                    newHtml +='                <tr>';
+                    newHtml +='                   <td class="content-block aligncenter">';
+                    newHtml += '                       <a href="http://[[SiteURL]]?state=confirmation&emailId=[[UserId]]&clientName=[[CompanyName]]" target="_blank" class="btn-primary">Vote Now</a>';
+                    newHtml +='                   </td>';
+                    newHtml +='               </tr>';
+                    newHtml +='               <tr>';
+                    newHtml +='                   <td class="content-block">Regards<br /><b>[[CompanyName]]</b><br/><br /><br /></td></tr>';
+                    newHtml += '                   <table>';
+                    $('.summernote').summernote('code', newHtml);
+                    return;
+                }
+                var div = $("#template" + index);
+                $('.summernote').summernote('code', div.html());
+                console.log("sss")
+
+            }
+            $(document).ready(function () {
+
+                $('.summernote').summernote();
+                //$('.summernote').summernote('code', 'abcd');
+            });
+
+        </script>
+
+    }
+</div>
+
